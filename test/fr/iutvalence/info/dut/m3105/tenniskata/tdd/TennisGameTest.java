@@ -6,10 +6,12 @@ import org.junit.Test;
 
 public class TennisGameTest
 {
+	private TennisGame tennisGame;
+
 	@Test
 	public void createANewTennisGameWithNoScoreShouldReturnLoveAll()
 	{
-		TennisGame tennisGame = new TennisGame();
+		createNewTennisGame();
 		
 		Assert.assertEquals(TennisGame.LOVE_ALL, tennisGame.getScoreAsString());
 	}
@@ -17,8 +19,8 @@ public class TennisGameTest
 	@Test
 	public void createATennisGameWhereServerHasTheFirstPointShouldReturnFifteenLove()
 	{
-		TennisGame tennisGame = new TennisGame();
-		tennisGame.serverWonThePoint();
+		createNewTennisGame();
+		playerWonThePoint(TennisGame.SERVER);
 		
 		Assert.assertEquals(TennisGame.FIFTEEN_LOVE, tennisGame.getScoreAsString());
 	}
@@ -26,9 +28,19 @@ public class TennisGameTest
 	@Test
 	public void createATennisGameWhereReceiverHasTheFirstPointShouldReturnLoveFifteen()
 	{
-		TennisGame tennisGame = new TennisGame();
-		tennisGame.receiverWonThePoint();
+		createNewTennisGame();
+		playerWonThePoint(TennisGame.RECEIVER);
 		
 		Assert.assertEquals(TennisGame.LOVE_FIFTEEN, tennisGame.getScoreAsString());
+	}
+
+	private void createNewTennisGame()
+	{
+		tennisGame = new TennisGame();
+	}
+	
+	public void playerWonThePoint(boolean isPlayerServer)
+	{
+		this.tennisGame.playerWonThePoint(isPlayerServer);
 	}
 }
