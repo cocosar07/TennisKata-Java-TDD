@@ -3,11 +3,13 @@ public class TennisGame
 {
 	public static final boolean SERVER = true;
 	public static final boolean RECEIVER = false;
-	
+
+	static final String FIFTEEN_ALL = "Fifteen-all";
 	public static final String LOVE_FIFTEEN = "Love-Fifteen";
 	public static final String FIFTEEN_LOVE = "Fifteen-Love";
 	public static final String LOVE_ALL = "Love-all";
-	
+
+	private static final int LOVE_SCORE = 0;
 	public static final int FIFTEEN_SCORE = 1;
 	
 	private int serverScore;
@@ -15,14 +17,14 @@ public class TennisGame
 
 	public String getScoreAsString()
 	{
-		if(this.serverScore == FIFTEEN_SCORE && this.receiverScore == 0)
+		if(this.serverScore == FIFTEEN_SCORE && this.receiverScore == LOVE_SCORE)
 			return FIFTEEN_LOVE;
 		
-		if(this.receiverScore == FIFTEEN_SCORE && this.serverScore == 0)
+		if(this.receiverScore == FIFTEEN_SCORE && this.serverScore == LOVE_SCORE)
 			return LOVE_FIFTEEN;
 		
 		if(this.serverScore == FIFTEEN_SCORE && this.receiverScore == FIFTEEN_SCORE)
-			return "Fifteen-all";
+			return FIFTEEN_ALL;
 		
 		return LOVE_ALL;
 	}

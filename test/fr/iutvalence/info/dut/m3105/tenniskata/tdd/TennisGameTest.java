@@ -41,7 +41,7 @@ public class TennisGameTest
 		playerWonThePoint(TennisGame.SERVER);
 		playerWonThePoint(TennisGame.RECEIVER);
 
-		Assert.assertEquals("Fifteen-all", tennisGame.getScoreAsString());
+		Assert.assertEquals(TennisGame.FIFTEEN_ALL, tennisGame.getScoreAsString());
 	}
 	
 	private void createNewTennisGame()
