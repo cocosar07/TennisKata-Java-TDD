@@ -15,11 +15,14 @@ public class TennisGame
 
 	public String getScoreAsString()
 	{
-		if(this.serverScore == FIFTEEN_SCORE)
+		if(this.serverScore == FIFTEEN_SCORE && this.receiverScore == 0)
 			return FIFTEEN_LOVE;
 		
-		if(this.receiverScore == FIFTEEN_SCORE)
+		if(this.receiverScore == FIFTEEN_SCORE && this.serverScore == 0)
 			return LOVE_FIFTEEN;
+		
+		if(this.serverScore == FIFTEEN_SCORE && this.receiverScore == FIFTEEN_SCORE)
+			return "Fifteen-all";
 		
 		return LOVE_ALL;
 	}
