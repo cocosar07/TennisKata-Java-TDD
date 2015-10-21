@@ -18,6 +18,7 @@ public class TennisGameTest
 	public void CreateANewTennisGameWhichShouldDisplayFifteenLove()
 	{
 		TennisGame tennisGame = new TennisGame();
+		tennisGame.increaseServerScore();
 		
 		Assert.assertEquals("Fifteen-Love", tennisGame.getScoreAsString());
 	}
