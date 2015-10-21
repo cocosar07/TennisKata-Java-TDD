@@ -7,7 +7,7 @@ import org.junit.Test;
 public class TennisGameTest
 {
 	@Test
-	public void CreateANewTennisGameWhichShouldDisplayLoveAll()
+	public void createANewTennisGameWithNoScoreShouldReturnLoveAll()
 	{
 		TennisGame tennisGame = new TennisGame();
 		
@@ -15,7 +15,7 @@ public class TennisGameTest
 	}
 	
 	@Test
-	public void CreateANewTennisGameWhichShouldDisplayFifteenLove()
+	public void createATennisGameWhereServerHasTheFirstPointShouldReturnFifteenLove()
 	{
 		TennisGame tennisGame = new TennisGame();
 		tennisGame.increaseServerScore();
