@@ -17,7 +17,7 @@ public class TennisGameTest
 	}
 	
 	@Test
-	public void createATennisGameWhereServerHasTheFirstPointShouldReturnFifteenLove()
+	public void createATennisGameWhereOnlyTheServerHasAPointShouldReturnFifteenLove()
 	{
 		createNewTennisGame();
 		playerWonThePoint(TennisGame.SERVER);
@@ -26,14 +26,14 @@ public class TennisGameTest
 	}
 	
 	@Test
-	public void createATennisGameWhereReceiverHasTheFirstPointShouldReturnLoveFifteen()
+	public void createATennisGameWhereOnlyTheReceiverHasAPointShouldReturnLoveFifteen()
 	{
 		createNewTennisGame();
 		playerWonThePoint(TennisGame.RECEIVER);
 		
 		Assert.assertEquals(TennisGame.LOVE_FIFTEEN, tennisGame.getScoreAsString());
 	}
-
+	
 	private void createNewTennisGame()
 	{
 		tennisGame = new TennisGame();
