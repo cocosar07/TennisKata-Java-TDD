@@ -22,4 +22,13 @@ public class TennisGameTest
 		
 		Assert.assertEquals("Fifteen-Love", tennisGame.getScoreAsString());
 	}
+	
+	@Test
+	public void createATennisGameWhereReceiverHasTheFirstPointShouldReturnLoveFifteen()
+	{
+		TennisGame tennisGame = new TennisGame();
+		tennisGame.increaseReceiverScore();
+		
+		Assert.assertEquals("Love-Fifteen", tennisGame.getScoreAsString());
+	}
 }
