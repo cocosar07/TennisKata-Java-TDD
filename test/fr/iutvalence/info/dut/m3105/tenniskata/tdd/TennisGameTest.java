@@ -11,24 +11,15 @@ public class TennisGameTest
 	{
 		TennisGame tennisGame = new TennisGame();
 		
-		Assert.assertEquals("Love-all", tennisGame.getScoreAsString());
+		Assert.assertEquals(TennisGame.LOVE_ALL, tennisGame.getScoreAsString());
 	}
 	
 	@Test
 	public void createATennisGameWhereServerHasTheFirstPointShouldReturnFifteenLove()
 	{
 		TennisGame tennisGame = new TennisGame();
-		tennisGame.increaseServerScore();
+		tennisGame.serverWonThePoint();
 		
-		Assert.assertEquals("Fifteen-Love", tennisGame.getScoreAsString());
-	}
-	
-	@Test
-	public void createATennisGameWhereReceiverHasTheFirstPointShouldReturnLoveFifteen()
-	{
-		TennisGame tennisGame = new TennisGame();
-		tennisGame.increaseReceiverScore();
-		
-		Assert.assertEquals("Love-Fifteen", tennisGame.getScoreAsString());
+		Assert.assertEquals(TennisGame.FIFTEEN_LOVE, tennisGame.getScoreAsString());
 	}
 }
